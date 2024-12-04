@@ -1,0 +1,380 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
+
+:root {
+    --primary-color: #f2f2f2;
+    --secondary-color: #190A28;
+    --accent-color: #D095FA;
+    --input-hover: #D095FA;
+    --text-color: #190A28;
+    --select-bg: #A86DF9;
+    --select-hover: #D095FA;
+    --scrollbar-thumb: #D095FA;
+    --scrollbar-color: #f7f7f7;
+}
+
+.dark-mode {
+    --primary-color: #190A28;
+    --secondary-color: #f2f2f2;
+    --accent-color: #491085;
+    --input-hover: #240842;
+    --text-color: #ffffff;
+    --select-bg: #A86DF9;
+    --select-hover: #491085;
+    --scrollbar-thumb: #6E19C8;
+    --scrollbar-color: #240842;
+}  
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
+
+html,
+body {
+    background: transparent;
+}
+
+.root-wrapper {
+    width: 30vw;
+    height: auto;
+    top: 31.2%;
+    left: 62.5%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background: transparent;
+    opacity: .9;
+}
+
+.main-wrapper {
+    margin: auto;
+    margin-top: 64.2%;
+    width: 300px;
+    padding-bottom: 10px;
+    border-radius: 9px;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-color);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 3px;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5vh;
+    color: var(--secondary-color);
+    background: linear-gradient(140deg, #D095FA 0%, #6E19C8 100%)!important;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10.5px;
+}
+
+.heading h1 {
+    position: relative;
+}
+
+.inputs {
+    max-height: 60vh;
+    background: var(--primary-color);
+    border-radius: 10px;
+    overflow: auto;
+}
+
+input:last-of-type {
+    border-radius: 0px 0px 10px 10px;
+}
+
+input:first-of-type {
+    border-radius: 10px 10px 0px 0px;
+}
+
+input:only-of-type {
+    border-radius: 10px 10px 10px 10px;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--accent-color);
+}
+
+.form {
+    width: 100%;
+    height: auto;
+    min-height: 10%;
+    max-height: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.form label {
+    margin-top: 24px;
+}
+
+.form-control[type="number"] {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.form-control[type="text"],
+.form-control[type="number"],
+.form-control[type="password"] {
+    border: none;
+    font-size: 14px;
+    padding: 5px 0px;
+    height: 50px;
+    text-align: center;
+    background: transparent;
+    background-color: transparent;
+    width: 100%;
+    color: var(--text-color);
+    transition: background-color .25s ease-in;
+}
+
+.form-control[type="text"]:focus,
+.form-control[type="number"]:focus,
+.form-control[type="password"]:focus {
+    outline: none;
+    background-color: var(--input-hover);
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  background: var(--select-bg) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=) no-repeat center center;
+  width: 1.2em;
+  height: 1.5rem;
+  opacity: .5;
+  border-radius: 5px;
+  transition: opacity .25s ease-in;
+}
+
+input::-webkit-inner-spin-button:hover,
+input::-webkit-inner-spin-button:active{
+  opacity: .8;
+}
+
+
+input[type=radio]{
+    appearance: none;
+    cursor: pointer;
+    background-color: var(--input-hover);
+    margin: 0;
+    font: inherit;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid var(--select-hover);
+    border-radius: 50%;
+    translate: -0.1em 0.15em;
+    transition: all .35s ease;
+    margin-left: .4vh;
+}
+
+input[type="radio"]:hover {
+    transform: scale(1.1);
+    background-color: var(--select-hover);
+}
+
+input[type="radio"]:checked {
+    transform: scale(1);
+    background-color: var(--select-bg);
+}
+
+
+input[type=checkbox] {
+    visibility: hidden;
+}
+
+.checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 19px;
+    width: 19px;
+    background-color: var(--select-hover);
+    border-radius: 5px;
+    transition: all .2s ease-in;
+}
+
+.checklabel {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.checklabel:hover input~.checkmark {
+    background-color: var(--select-bg);
+}
+
+.checklabel input:checked~.checkmark {
+    background-color: var(--select-bg);
+}
+
+.checkmark:after {
+    content: "";
+    position: relative;
+    display: block;
+    opacity: 0;
+}
+
+.checklabel input:checked~.checkmark:after {
+    opacity: 1;
+}
+
+.checklabel .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: all .25s ease-in;
+}
+
+
+.form-input-group {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding: 5px;
+}
+
+.input-group {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.input-group-chk {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.input-group label {
+    color: var(--text-color);
+}
+
+.input-group label:checked {
+    color: var(--accent-color);
+}
+
+.form-group-title {
+    font-size: 18px;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.select-title {
+    margin: 5px 0px;
+    padding: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.form-select {
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    background: transparent;
+    margin-top: 2.5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    height: 50px;
+    color: var(--text-color);
+    transition: background-color .25s ease-in;
+}
+
+.form-select:hover {
+    background-color: var(--input-hover);
+}
+
+.form-select > option {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: var(--select-bg);
+    color: var(--secondary-color);
+}
+
+.form-select > option:focus,
+.form-select > option:hover {
+    background-color: var(--select-hover);
+}
+
+
+.form-select:active,
+.form-select:focus {
+    width: 100%;
+    margin-top: 2.5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: none;
+}
+
+.form-select:focus-visible {
+    outline: none;
+}
+
+.input-group-chk label {
+    color: var(--text-color);
+}
+
+::placeholder {
+    opacity: 65%;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5vh;
+    margin-top: .75vh;
+    cursor: pointer;
+    font-size: 2.5vh;
+    background: var(--select-bg);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 10px;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: color 0.1s linear, background-color 0.25s ease-in;
+}
+
+.btn:hover {
+    background-color: var(--select-hover);
+}
